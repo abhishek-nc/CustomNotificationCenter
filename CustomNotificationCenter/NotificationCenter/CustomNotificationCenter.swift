@@ -17,9 +17,7 @@ class CustomNotificationCenter {
     
     func addObserver(name:NSNotification.Name,object:NSObject,block:Selector){
         
-        if let _ = observerList[name]{
-            observerList[name]?.append((object,block))
-        }else{
+        if case nil = observerList[name]?.append((object,block)){
             observerList[name] = [(object,block)]
         }
     }
